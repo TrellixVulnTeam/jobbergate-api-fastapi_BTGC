@@ -16,3 +16,4 @@ Table of Contents
    Usage <usage>
    Jobbergate.yaml <jobbergate_yaml>
    Implementation Details <implementation_details>
+   Local Development <local_development>
