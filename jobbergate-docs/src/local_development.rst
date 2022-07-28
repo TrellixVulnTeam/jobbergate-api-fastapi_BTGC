@@ -21,10 +21,10 @@ the ``jobbergate-cli``. Request one of the senior Armada engineers to set one up
 you. When the setup is done, you will be provided two values that you will need for
 configuration:
 
-* client_id
-* client_secret
+* ``client_id``
+* ``client_secret``
 
-Save these for later
+Save these for later.
 
 
 Clone the git repo
@@ -42,8 +42,9 @@ repository and changing to the ``jobbergate-cli`` directory:
 Install the python package
 ..........................
 
-Next, you will need to install the package. The ``jobbergate-cli`` package uses Poetry
-for dependency and virtualenv management. Run this command to install the package:
+Next, you will need to install the package. The ``jobbergate-cli`` package uses
+`Poetry <https://pytyhon-poetry.org/>`_ for dependency and virtualenv management. Run
+this command to install the package:
 
 .. code-block:: bash
 
@@ -72,8 +73,8 @@ Check it out
 
 Now, to make sure that things are configured correctly, try logging in and fetching a
 list of applications. For all the jobber gate commands, you will either need to be
-executing them inside a poetry shell or prefixing them with a ``poetry run`` command. It
-is easiest to run in a poetry shell:
+executing them inside a poetry shell or prefixing them with a ``poetry run`` command.
+The easiest way is to run in a poetry shell:
 
 .. code-block:: bash
 
@@ -125,7 +126,7 @@ You should see a lot of lines in a table that looks something like::
    │ 91  │ tucker-test            │ tucker-test            │                                    │ tucker@omnivector.solutions        │ True                 │
    └─────┴────────────────────────┴────────────────────────┴────────────────────────────────────┴────────────────────────────────────┴──────────────────────┘
 
-If you see this kind of output, congratulations! You now have an local instance of
+If you see this kind of output, congratulations! You now have a local instance of
 ``jobbergate-cli`` working and ready for develoment.
 
 Make sure to deactivate the Poetry virtualenv before you move on by typing "exit" or
@@ -135,7 +136,7 @@ hitting ``<ctl-d>``.
 Local jobbergate-api setup
 --------------------------
 
-The ``jobbergate-api`` is easiest to set up for local development using
+The easiest way to set up ``jobbergate-api`` for local development is using
 ``docker-compose``. There is a ``docker-compose.yml`` in the root directory of the main
 ``jobbergate`` repository that can be used to spin up the following services:
 
@@ -167,6 +168,10 @@ If you haven't already, `Clone the git repo`_.  From the root directory of the
    $ docker-compose up --build
 
 Wait until the compose finishes.
+
+TODO: We need to create a way to automatically upgraged the database when it is started
+via docker-compose.
+
 
 
 Try out the API with Swagger
@@ -201,8 +206,8 @@ Configure `jobbergate-cli` to use the local API
 ...............................................
 
 At this point, you may configure your local ``jobbergate-cli`` to connect to your local
-``jobbergate-api``. To do this, navigate ack to the ``jobbergate-cli`` directory and
-edit the ``.env`` file you created ealier to use the local API::
+``jobbergate-api``. To do this, navigate to the ``jobbergate-cli`` directory and edit
+the ``.env`` file you created ealier to use the local API::
 
    JOBBERGATE_API_ENDPOINT=https://localhost:8000/jobbergate
 
