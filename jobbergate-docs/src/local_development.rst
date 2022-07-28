@@ -169,9 +169,6 @@ If you haven't already, `Clone the git repo`_.  From the root directory of the
 
 Wait until the compose finishes.
 
-TODO: We need to create a way to automatically upgraged the database when it is started
-via docker-compose.
-
 
 
 Try out the API with Swagger
@@ -191,15 +188,19 @@ show the cached auth token (you will need to login if you haven't yet):
    $ jobbergate show-token --prefix --plain
 
 The token will automatically be copied to your clipboard for you. You can also just
-copy and paste it from the output if you like. You may now exit the Poetry shell and go
-back to the root ``jobbergate`` directory.
+copy it from the output if you like. You may now exit the Poetry shell and go back to
+the root ``jobbergate`` directory.
 
 Now, open a browser to the ``jobbergate-api`` swagger page at
 `localhost:8000/jobbergate/docs <http://localhost:8000/jobbergate/docs>`_.
 
-You should see a listing of all the endpoints that are available to you. None of them
-will be very interesting at this point, though, because the database you are using in
-docker is empty.
+You should see a listing of all the endpoints that are available to you. However, you
+will need to add your auth token to swagger to pull any data from them. To do this,
+click on the small lock icon in the upper right and paste the token you copied earlier.
+Once you have confirmed this, the endpoints should all accept your requests.
+
+None of them will be very interesting at this point, though, because the database you
+are using in docker is empty.
 
 
 Configure `jobbergate-cli` to use the local API
